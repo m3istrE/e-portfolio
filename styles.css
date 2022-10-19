@@ -421,20 +421,16 @@ footer {
         display: none;
     }
 
-    .h1 {
-        font-size: 28px;
-    }
-
-    .about-me__info--para{
-        font: 18px;
-    }
-
     .project__description--para {
         display: none;
     }
 
-    .project__description {
-        left: 30px;
-        padding-right: 30px;
+    .project__description--links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .project__description--title {
+        font-size: 30px;
     }
 }
