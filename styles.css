@@ -37,6 +37,14 @@ a {
     position: relative;
 }
 
+i {
+    transition: opacity 200ms ease;
+}
+
+i:hover {
+    opacity: .6;
+}
+
 .link__hover-effect::after{
     content: "";
     position: absolute;
@@ -168,6 +176,21 @@ nav {
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
     margin-bottom: 16px;
+    animation: animate-profile-picture 800ms 200ms backwards;
+}
+
+@keyframes animate-profile-picture {
+    0%{
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
 .about-me__picture {
@@ -178,11 +201,14 @@ nav {
 
 .about-me__info--title {
     margin-bottom: 16px;
+    animation: fade-up 800ms 400ms backwards;
+
 }
 
 .about-me__info--para {
     font-size: 18px;
     margin-bottom: 28px;
+    animation: fade-up 800ms 550ms backwards;
 }
 
 .about-me__link {
@@ -192,14 +218,61 @@ nav {
     padding: 0 16px;
 }
 
+.about-me__links {
+    animation: fade-up 800ms 700ms backwards;
+
+}
+
+@keyframes fade-up {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .about-me__img--container {
     flex: 1;
     display: flex;
     align-items: center;
+    animation: fade-in 1200ms 800ms backwards;
 }
 
 .about-me__img {
     width: 100%;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.wave {
+    display: inline-block;
+    animation: animate-wave 500ms infinite;
+}
+
+@keyframes animate-wave {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }
 
 /* Tech - stack */
@@ -421,6 +494,13 @@ footer {
         display: none;
     }
 
+    .project__description {
+        padding: 0;
+        left: 0;
+        width: 100%;
+        
+    }
+
     .project__description--para {
         display: none;
     }
@@ -430,7 +510,14 @@ footer {
         justify-content: center;
     }
 
+    .project__description--sub-title {
+        text-align: center;
+        margin: 12px 0;
+    }
+
     .project__description--title {
+        line-height: 1;
+        text-align: center;
         font-size: 30px;
     }
 }
